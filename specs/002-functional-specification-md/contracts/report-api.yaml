@@ -1,0 +1,376 @@
+openapi: 3.0.3
+info:
+  title: Report API
+  description: Report generation REST API for SPMS Timecard module
+  version: 1.0.0
+servers:
+  - url: /api/v1/report
+    description: Report API base path
+
+tags:
+  - name: Reports
+    description: Timecard report generation operations
+
+paths:
+  /timecard-summary:
+    get:
+      tags:
+        - Reports
+      summary: Generate Timecard Summary Report
+      description: Generate summary report grouped by employee and month
+      operationId: generateTimecardSummaryReport
+      parameters:
+        - name: startMonth
+          in: query
+          description: Start month in format YYYY-MM
+          required: false
+          schema:
+            type: string
+            pattern: '^\d{4}-\d{2}$'
+        - name: endMonth
+          in: query
+          description: End month in format YYYY-MM
+          required: false
+          schema:
+            type: string
+            pattern: '^\d{4}-\d{2}$'
+        - name: staffId
+          in: query
+          description: Filter by staff ID
+          required: false
+          schema:
+            type: string
+        - name: departmentId
+          in: query
+          description: Filter by department ID
+          required: false
+          schema:
+            type: string
+        - name: format
+          in: query
+          description: Response format
+          required: false
+          schema:
+            type: string
+            enum: [json, excel]
+            default: json
+      responses:
+        '200':
+          description: Report generated successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TimecardSummaryReportItem'
+            application/vnd.openxmlformats-officedocument.spreadsheetml.sheet:
+              schema:
+                type: string
+                format: binary
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /individual-timecard:
+    get:
+      tags:
+        - Reports
+      summary: Generate Individual Timecard Record Report
+      description: Generate individual timecard records report
+      operationId: generateIndividualTimecardReport
+      parameters:
+        - name: startMonth
+          in: query
+          description: Start month in format YYYY-MM
+          required: false
+          schema:
+            type: string
+            pattern: '^\d{4}-\d{2}$'
+        - name: endMonth
+          in: query
+          description: End month in format YYYY-MM
+          required: false
+          schema:
+            type: string
+            pattern: '^\d{4}-\d{2}$'
+        - name: staffId
+          in: query
+          description: Filter by staff ID
+          required: false
+          schema:
+            type: string
+        - name: format
+          in: query
+          description: Response format
+          required: false
+          schema:
+            type: string
+            enum: [json, excel]
+            default: json
+      responses:
+        '200':
+          description: Report generated successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/IndividualTimecardReportItem'
+            application/vnd.openxmlformats-officedocument.spreadsheetml.sheet:
+              schema:
+                type: string
+                format: binary
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /timecard-details:
+    get:
+      tags:
+        - Reports
+      summary: Generate Timecard Details Report
+      description: Generate detailed timecard report with project breakdown
+      operationId: generateTimecardDetailsReport
+      parameters:
+        - name: startMonth
+          in: query
+          description: Start month in format YYYY-MM
+          required: false
+          schema:
+            type: string
+            pattern: '^\d{4}-\d{2}$'
+        - name: endMonth
+          in: query
+          description: End month in format YYYY-MM
+          required: false
+          schema:
+            type: string
+            pattern: '^\d{4}-\d{2}$'
+        - name: staffId
+          in: query
+          description: Filter by staff ID
+          required: false
+          schema:
+            type: string
+        - name: projectCode
+          in: query
+          description: Filter by project code
+          required: false
+          schema:
+            type: string
+        - name: format
+          in: query
+          description: Response format
+          required: false
+          schema:
+            type: string
+            enum: [json, excel]
+            default: json
+      responses:
+        '200':
+          description: Report generated successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TimecardDetailsReportItem'
+            application/vnd.openxmlformats-officedocument.spreadsheetml.sheet:
+              schema:
+                type: string
+                format: binary
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /perm-staff-it:
+    get:
+      tags:
+        - Reports
+      summary: Generate Perm Staff IT Record Report
+      description: Generate overtime record report for permanent staff
+      operationId: generatePermStaffITReport
+      parameters:
+        - name: startMonth
+          in: query
+          description: Start month in format YYYY-MM
+          required: false
+          schema:
+            type: string
+            pattern: '^\d{4}-\d{2}$'
+        - name: endMonth
+          in: query
+          description: End month in format YYYY-MM
+          required: false
+          schema:
+            type: string
+            pattern: '^\d{4}-\d{2}$'
+        - name: staffId
+          in: query
+          description: Filter by staff ID
+          required: false
+          schema:
+            type: string
+        - name: format
+          in: query
+          description: Response format
+          required: false
+          schema:
+            type: string
+            enum: [json, excel]
+            default: json
+      responses:
+        '200':
+          description: Report generated successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PermStaffITReportItem'
+            application/vnd.openxmlformats-officedocument.spreadsheetml.sheet:
+              schema:
+                type: string
+                format: binary
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+components:
+  schemas:
+    TimecardSummaryReportItem:
+      type: object
+      properties:
+        staffId:
+          type: string
+        staffName:
+          type: string
+        department:
+          type: string
+        month:
+          type: string
+          pattern: '^\d{4}-\d{2}$'
+        totalHours:
+          type: number
+          format: double
+        status:
+          type: string
+          enum: [DRAFT, SUBMITTED, APPROVED, REJECTED]
+
+    IndividualTimecardReportItem:
+      type: object
+      properties:
+        staffId:
+          type: string
+        staffName:
+          type: string
+        department:
+          type: string
+        month:
+          type: string
+          pattern: '^\d{4}-\d{2}$'
+        submittedDate:
+          type: string
+          format: date
+        approvedDate:
+          type: string
+          format: date
+        totalHours:
+          type: number
+          format: double
+        status:
+          type: string
+          enum: [DRAFT, SUBMITTED, APPROVED, REJECTED]
+
+    TimecardDetailsReportItem:
+      type: object
+      properties:
+        staffId:
+          type: string
+        staffName:
+          type: string
+        department:
+          type: string
+        date:
+          type: string
+          format: date
+        projectCode:
+          type: string
+        taskNumber:
+          type: string
+        activity:
+          type: string
+        hours:
+          type: number
+          format: double
+        month:
+          type: string
+          pattern: '^\d{4}-\d{2}$'
+
+    PermStaffITReportItem:
+      type: object
+      properties:
+        staffId:
+          type: string
+        staffName:
+          type: string
+        department:
+          type: string
+        date:
+          type: string
+          format: date
+        regularHours:
+          type: number
+          format: double
+        overtimeHours:
+          type: number
+          format: double
+        totalHours:
+          type: number
+          format: double
+        month:
+          type: string
+          pattern: '^\d{4}-\d{2}$'
+
+    ErrorResponse:
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        details:
+          type: object
+
+  responses:
+    BadRequest:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    InternalServerError:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+

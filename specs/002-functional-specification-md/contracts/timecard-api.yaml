@@ -1,0 +1,389 @@
+openapi: 3.0.3
+info:
+  title: Timecard API
+  description: Timecard module REST API for SPMS system
+  version: 1.0.0
+servers:
+  - url: /api/v1/timecard
+    description: Timecard API base path
+
+tags:
+  - name: Timecard
+    description: Timecard entry and management operations
+  - name: Projects
+    description: Project validation and active project listing
+
+paths:
+  /employee-info:
+    get:
+      tags:
+        - Timecard
+      summary: Get employee information
+      description: Get employee basic information for timecard auto-population
+      operationId: getEmployeeInfo
+      responses:
+        '200':
+          description: Employee information retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmployeeInfo'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /submit:
+    post:
+      tags:
+        - Timecard
+      summary: Submit timecard
+      description: Submit timecard data and create Flowable process instance
+      operationId: submitTimecard
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TimecardSubmitRequest'
+      responses:
+        '201':
+          description: Timecard submitted successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimecardSubmitResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /projects/active:
+    get:
+      tags:
+        - Projects
+      summary: Get active projects
+      description: Get list of active projects for timecard entry
+      operationId: getActiveProjects
+      parameters:
+        - name: search
+          in: query
+          description: Search keyword for project code or name
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Active projects retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProjectTaskDTO'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /projects/validate/{projectCode}:
+    get:
+      tags:
+        - Projects
+      summary: Validate project code
+      description: Validate project code and get project information
+      operationId: validateProjectCode
+      parameters:
+        - name: projectCode
+          in: path
+          required: true
+          description: Project code to validate
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Project validation result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectValidationDTO'
+        '404':
+          description: Project not found
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /adjust/{month}:
+    put:
+      tags:
+        - Timecard
+      summary: Adjust timecard for previous month
+      description: Adjust timecard entries for a previous month (only previous months allowed)
+      operationId: adjustTimecardMonth
+      parameters:
+        - name: month
+          in: path
+          required: true
+          description: Month in format YYYY-MM
+          schema:
+            type: string
+            pattern: '^\d{4}-\d{2}$'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TimecardAdjustRequest'
+      responses:
+        '200':
+          description: Timecard adjusted successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimecardSubmitResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /approval-tasks:
+    get:
+      tags:
+        - Timecard
+      summary: Get pending approval tasks
+      description: Get list of timecard approval tasks for current user
+      operationId: getApprovalTasks
+      responses:
+        '200':
+          description: Approval tasks retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ApprovalTask'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+components:
+  schemas:
+    EmployeeInfo:
+      type: object
+      properties:
+        staffId:
+          type: string
+          description: Staff ID
+        staffNameChinese:
+          type: string
+          description: Staff name in Chinese
+        staffNameEnglish:
+          type: string
+          description: Staff name in English
+        department:
+          type: string
+          description: Department name
+        localManagerId:
+          type: string
+          description: Local manager staff ID
+        functionalManagerId:
+          type: string
+          description: Functional manager staff ID
+
+    TimecardSubmitRequest:
+      type: object
+      required:
+        - employeeInfo
+        - timecardEntries
+        - month
+      properties:
+        employeeInfo:
+          $ref: '#/components/schemas/EmployeeInfo'
+        timecardEntries:
+          type: array
+          description: Timecard entries grouped by date
+          items:
+            $ref: '#/components/schemas/TimecardEntry'
+        summary:
+          type: array
+          description: Summary grouped by Project+Task+Activity
+          items:
+            $ref: '#/components/schemas/TimecardSummary'
+        month:
+          type: string
+          description: Month in format YYYY-MM
+          pattern: '^\d{4}-\d{2}$'
+
+    TimecardEntry:
+      type: object
+      required:
+        - date
+        - entries
+      properties:
+        date:
+          type: string
+          format: date
+          description: Entry date
+        entries:
+          type: array
+          description: Project entries for this date
+          items:
+            $ref: '#/components/schemas/ProjectEntry'
+
+    ProjectEntry:
+      type: object
+      required:
+        - projectCode
+        - hours
+      properties:
+        projectCode:
+          type: string
+          description: Project code
+        taskNumber:
+          type: string
+          description: Task number
+        activity:
+          type: string
+          description: Activity description
+        hours:
+          type: number
+          format: double
+          minimum: 0
+          maximum: 24
+          description: Hours worked
+
+    TimecardSummary:
+      type: object
+      properties:
+        projectCode:
+          type: string
+        taskNumber:
+          type: string
+        activity:
+          type: string
+        totalHours:
+          type: number
+          format: double
+
+    TimecardSubmitResponse:
+      type: object
+      properties:
+        processInstanceId:
+          type: string
+          description: Flowable process instance ID
+        timecardId:
+          type: string
+          description: Timecard data ID
+        status:
+          type: string
+          enum: [DRAFT, SUBMITTED, APPROVED, REJECTED]
+        message:
+          type: string
+
+    ProjectTaskDTO:
+      type: object
+      properties:
+        projectCode:
+          type: string
+        projectName:
+          type: string
+        taskNumber:
+          type: string
+        taskName:
+          type: string
+        activity:
+          type: string
+        status:
+          type: string
+          enum: [ACTIVE, COMPLETED]
+
+    ProjectValidationDTO:
+      type: object
+      properties:
+        valid:
+          type: boolean
+          description: Whether project code is valid
+        projectCode:
+          type: string
+        projectName:
+          type: string
+        tasks:
+          type: array
+          description: Available tasks for this project
+          items:
+            type: object
+            properties:
+              taskNumber:
+                type: string
+              taskName:
+                type: string
+              activity:
+                type: string
+
+    TimecardAdjustRequest:
+      type: object
+      required:
+        - timecardEntries
+      properties:
+        timecardEntries:
+          type: array
+          items:
+            $ref: '#/components/schemas/TimecardEntry'
+
+    ApprovalTask:
+      type: object
+      properties:
+        taskId:
+          type: string
+          description: Flowable task ID
+        processInstanceId:
+          type: string
+        timecardId:
+          type: string
+        employeeName:
+          type: string
+        month:
+          type: string
+        submittedAt:
+          type: string
+          format: date-time
+        status:
+          type: string
+          enum: [PENDING, APPROVED, REJECTED]
+
+    ErrorResponse:
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        details:
+          type: object
+
+  responses:
+    BadRequest:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    InternalServerError:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+

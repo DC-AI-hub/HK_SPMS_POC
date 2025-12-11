@@ -1,0 +1,194 @@
+openapi: 3.0.3
+info:
+  title: Excel Import/Export API
+  description: Excel import and export REST API for SPMS Timecard module
+  version: 1.0.0
+servers:
+  - url: /api/v1/timecard
+    description: Excel API base path
+
+tags:
+  - name: Excel
+    description: Excel import and export operations
+
+paths:
+  /import/projects:
+    post:
+      tags:
+        - Excel
+      summary: Import projects from Excel
+      description: Import projects, tasks, and activities from Excel file
+      operationId: importProjects
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: Excel file containing projects
+      responses:
+        '200':
+          description: Projects imported successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImportResultDTO'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /export/projects:
+    get:
+      tags:
+        - Excel
+      summary: Export projects to Excel
+      description: Export projects, tasks, and activities to Excel file
+      operationId: exportProjects
+      parameters:
+        - name: status
+          in: query
+          description: Filter by project status (ACTIVE, COMPLETED)
+          required: false
+          schema:
+            type: string
+            enum: [ACTIVE, COMPLETED]
+      responses:
+        '200':
+          description: Excel file downloaded
+          content:
+            application/vnd.openxmlformats-officedocument.spreadsheetml.sheet:
+              schema:
+                type: string
+                format: binary
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /import/holidays:
+    post:
+      tags:
+        - Excel
+      summary: Import holidays from Excel
+      description: Import holidays from Excel file
+      operationId: importHolidays
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: Excel file containing holidays
+      responses:
+        '200':
+          description: Holidays imported successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImportResultDTO'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /export/holidays:
+    get:
+      tags:
+        - Excel
+      summary: Export holidays to Excel
+      description: Export holidays to Excel file
+      operationId: exportHolidays
+      parameters:
+        - name: year
+          in: query
+          description: Year to export (optional, exports all if not specified)
+          required: false
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Excel file downloaded
+          content:
+            application/vnd.openxmlformats-officedocument.spreadsheetml.sheet:
+              schema:
+                type: string
+                format: binary
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+components:
+  schemas:
+    ImportResultDTO:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Whether import was successful
+        totalRecords:
+          type: integer
+          description: Total number of records in file
+        importedRecords:
+          type: integer
+          description: Number of successfully imported records
+        failedRecords:
+          type: integer
+          description: Number of failed records
+        errors:
+          type: array
+          description: List of import errors
+          items:
+            type: object
+            properties:
+              row:
+                type: integer
+                description: Row number in Excel file
+              message:
+                type: string
+                description: Error message
+
+    ErrorResponse:
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        details:
+          type: object
+
+  responses:
+    BadRequest:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    InternalServerError:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+
