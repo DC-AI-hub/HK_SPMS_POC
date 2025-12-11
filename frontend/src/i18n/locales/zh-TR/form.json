@@ -1,0 +1,63 @@
+{
+  "title": "表單構建器",
+  "submit": "提交",
+  "formView": "表單",
+  "dataView": "數據",
+  "schemaView": "結構",
+  "submittedData": "提交的數據",
+  "schemaEditor": "表單結構編輯器",
+  "format": "格式化",
+  "noVersions": "沒有可用版本",
+  "versionPreview": "表單版本預覽",
+  "fields": {
+    "textfield": "文本字段",
+    "number": "數字",
+    "checkbox": "復選框",
+    "textarea": "文本區域"
+  },
+  "metadata": {
+    "title": "表單元數據",
+    "copy": "復製到剪貼板",
+    "edit": "編輯元數據",
+    "formattedView": "格式化視圖",
+    "rawView": "原始JSON視圖"
+  },
+  "create": {
+    "title": "創建新表單"
+  },
+  "preview": {
+    "empty": "未提供表單架構以供預覽"
+  },
+  "deprecate": "廢棄版本",
+  "keyHelper": "表單的唯一識別符（僅字母、數字和底線）",
+  "keyInvalid": "鍵只能包含字母、數字和底線",
+  "active": "啟用",
+  "createVersion": "建立版本",
+  "createVersionTitle": "建立新版本",
+  "deprecated": "已廢棄",
+  "errors": {
+    "formNotFound": "表單未找到",
+    "validationError": "驗證錯誤: {{detail}}",
+    "invalidVersionFormat": "版本ID格式無效（只允許字母、數字、連字符和點）",
+    "failedToLoadBase": "載入基礎版本失敗",
+    "baseVersionNotFound": "未找到基礎版本",
+    "genericError": "建立版本時發生錯誤，請重試"
+  },
+  "formKey": "表單識別符",
+  "loadVersions": "載入版本",
+  "versionCreated": "版本建立成功",
+  "versionDeprecated": "版本已成功廢棄",
+  "timeline": "時間線",
+  "compare": "比較",
+  "selectBaseVersion": "選擇基礎版本",
+  "selectCompareVersion": "選擇比較版本",
+  "selectFormPrompt": "選擇一個表單以檢視其版本",
+  "formName": "表單名稱",
+  "latestVersion": "最新版本",
+  "searchForms": "搜尋表單",
+  "baseVersion": "基礎版本",
+  "noBaseVersion": "無基礎版本",
+  "originalVersion": "原始版本",
+  "modifiedVersion": "修改版本"
+  
+}

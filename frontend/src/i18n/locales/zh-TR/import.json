@@ -1,0 +1,10 @@
+{
+  "dragDropTitle": "拖放以上傳",
+  "dragDropText": "或點擊選擇文件",
+  "selectedFile": "已選文件",
+  "result": "導入完成：成功 {success} 條，失敗 {error} 條",
+  "status": {
+    "valid": "有效",
+    "error": "錯誤"
+  }
+}

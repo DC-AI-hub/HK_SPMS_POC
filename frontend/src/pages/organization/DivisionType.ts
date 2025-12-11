@@ -1,0 +1,7 @@
+export enum DivisionType {
+  CORE = 'CORE',
+  BUSINESS = 'BUSINESS',
+  TECHNOLOGY = 'TECHNOLOGY',
+  STRATEGY = 'STRATEGY',
+  SUPPORT = 'SUPPORT'
+}

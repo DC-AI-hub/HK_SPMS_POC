@@ -1,0 +1,53 @@
+@import './styles/tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Register FS Elliot Pro */
+@font-face {
+  font-family: 'FS Elliot Pro';
+  src: url('./styles/FSElliotPro.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root, body, #root {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: "FS Elliot Pro", Arial, "Heiti TC", "Heiti SC", "Microsoft JhengHei", "Microsoft Yahei", sans-serif;
+}
+
+/* Language-specific font preferences (FS first to ensure English uses FS) */
+html:lang(en), [lang="en"] {
+  font-family: "FS Elliot Pro", Arial, sans-serif;
+}
+
+html:lang(zh), [lang="zh"] {
+  font-family: "FS Elliot Pro", "Heiti SC", "Microsoft Yahei", Arial, sans-serif;
+}
+
+html:lang(zh-TR), [lang="zh-TR"] {
+  font-family: "FS Elliot Pro", "Heiti TC", "Microsoft JhengHei", Arial, sans-serif;
+}
+
+.bjs-powered-by {
+  display: none !important;
+}
+
+.djs-container {
+    border-right: 1px solid gray;
+    border-top: 1px solid gray;
+}
+
+.bio-properties-panel {
+    border-top: 1px solid gray;
+}
+.fjs-powered-by  {
+  display: none;
+}
+
+.fjs-element {
+  height: 100%;
+}

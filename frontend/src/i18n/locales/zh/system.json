@@ -1,0 +1,114 @@
+{
+  "settings": {
+    "title": "系统设置",
+    "loading": "正在加载系统配置...",
+    "unsavedChanges": "未保存的更改",
+    "allChangesSaved": "所有更改已保存"
+  },
+  "buttons": {
+    "reset": "重置",
+    "saveChanges": "保存更改",
+    "saving": "保存中..."
+  },
+  "validation": {
+    "mustBeNumber": "必须是一个有效的数字",
+    "invalidJson": "无效的JSON格式"
+  },
+  "status": {
+    "saveSuccess": "设置保存成功！",
+    "saveError": "保存设置失败，请重试。",
+    "validationError": "请在保存前修复验证错误。"
+  },
+  "errors": {
+    "loadingError": "加载系统配置错误"
+  },
+  "pageTitles": {
+    "systemConfiguration": "系统配置"
+  },
+  "descriptions": {
+    "systemConfig": "管理系统设置、导航菜单和主题配置"
+  },
+  "dataTypes": {
+    "BOOLEAN": "布尔值",
+    "NUMBER": "数字",
+    "JSON": "JSON",
+    "STRING": "字符串"
+  },
+  "booleanStates": {
+    "enabled": "启用",
+    "disabled": "禁用"
+  },
+  "jsonHelper": "输入有效的JSON格式",
+  "theme": {
+    "management": "主题管理",
+    "addTheme": "添加主题",
+    "noThemes": "未配置主题。点击\"添加主题\"开始配置。",
+    "editTheme": "编辑主题",
+    "addNewTheme": "添加新主题",
+    "themeName": "主题名称",
+    "primaryColor": "主色调",
+    "secondaryColor": "辅助色调",
+    "backgroundColor": "背景颜色",
+    "textColor": "文字颜色",
+    "setAsDefault": "设置为默认主题",
+    "preview": "预览",
+    "updatePreview": "更新预览",
+    "cancel": "取消",
+    "createTheme": "创建主题",
+    "updateTheme": "更新主题",
+    "activateSuccess": "主题激活成功！",
+    "activateError": "激活主题失败，请重试。",
+    "loading": "正在加载主题配置...",
+    "validation": {
+      "nameRequired": "主题名称是必填项",
+      "nameTooLong": "主题名称必须少于50个字符",
+      "invalidHex": "无效的十六进制颜色格式",
+      "hexFormat": "十六进制格式: #RRGGBB"
+    },
+    "previewText": "这是使用主题颜色的预览文本。",
+    "primaryLabel": "主色调",
+    "secondaryLabel": "辅助色调",
+    "backgroundLabel": "背景",
+    "primaryValue": "主色调:",
+    "secondaryValue": "辅助色调:",
+    "backgroundValue": "背景:",
+    "textValue": "文字:",
+    "defaultChip": "默认",
+    "activeChip": "已激活",
+    "setActive": "设为激活"
+  },
+  "menu": {
+    "management": "菜单配置",
+    "addMenuItem": "添加菜单项",
+    "editMenuItem": "编辑菜单项",
+    "addNewMenuItem": "添加新菜单项",
+    "noMenuItems": "未配置菜单项。点击\"添加菜单项\"开始配置。",
+    "loading": "正在加载菜单配置...",
+    "title": "标题",
+    "path": "路径",
+    "icon": "图标",
+    "displayOrder": "显示顺序",
+    "parentMenu": "父菜单",
+    "active": "激活",
+    "allowedRoleIds": "允许的角色ID",
+    "noParent": "无父菜单（顶级）",
+    "order": "顺序",
+    "iconNone": "无",
+    "roles": "角色",
+    "inactive": "未激活",
+    "validation": {
+      "titleRequired": "标题是必填项",
+      "titleTooLong": "标题必须少于100个字符",
+      "pathRequired": "路径是必填项",
+      "displayOrderNonNegative": "显示顺序必须为非负数"
+    },
+    "status": {
+      "createSuccess": "菜单项创建成功！",
+      "updateSuccess": "菜单项更新成功！",
+      "deleteSuccess": "菜单项删除成功！",
+      "saveError": "保存菜单项失败，请重试。",
+      "deleteError": "删除菜单项失败，请重试。"
+    },
+    "confirmDelete": "确定要删除此菜单项吗？"
+  }
+}

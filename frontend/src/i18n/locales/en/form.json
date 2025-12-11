@@ -1,0 +1,79 @@
+{
+  "title": "Form Builder",
+  "submit": "Submit",
+  "keyInput": {
+    "label": "Form Key",
+    "placeholder": "Enter unique form key",
+    "existsWarning": "This form key already exists",
+    "loading": "Checking availability...",
+    "error": "Error checking form keys"
+  },
+  "formView": "Form",
+  "dataView": "Data",
+  "schemaView": "Schema",
+  "submittedData": "Submitted Data",
+  "schemaEditor": "Schema Editor",
+  "format": "Format",
+  "previewTitle": "Form Preview",
+  "untitled": "Untitled Form",
+  "required": "Required",
+  "optional": "Optional",
+  "fields": {
+    "textfield": "Text Field",
+    "number": "Number",
+    "checkbox": "Checkbox",
+    "textarea": "Text Area",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email Address"
+  },
+  "metadata": {
+    "title": "Form Metadata",
+    "copy": "Copy to clipboard",
+    "edit": "Edit metadata",
+    "formattedView": "Formatted View",
+    "rawView": "Raw JSON View"
+  },
+  "create": {
+    "title": "Create New Form"
+  },
+  "preview": {
+    "empty": "No form schema provided for preview"
+  },
+  "name": "Form Name",
+  "key": "Form Key",
+  "lastModified": "Last Modified",
+  "viewVersions": "View Versions",
+  "createDialog": {
+    "title": "Create New Form"
+  },
+  "versionsDialog": {
+    "title": "Versions of {name}"
+  },
+  "keyHelper": "Unique identifier for the form (letters, numbers and underscores only)",
+  "keyInvalid": "Key must contain only letters, numbers and underscores",
+  "active": "Active",
+  "createVersion": "Create Version",
+  "createVersionTitle": "Create New Version",
+  "deprecate": "Deprecate",
+  "deprecated": "Deprecated",
+  "errors": {
+    "formNotFound": "Form not found",
+    "genericError": "An error occurred while creating the version",
+    "validationError": "Validation error: {{detail}}"
+  },
+  "formKey": "Form Key",
+  "loadVersions": "Load Versions",
+  "versionCreated": "Version created successfully",
+  "versionDeprecated": "Version deprecated successfully",
+  "timeline": "Timeline",
+  "compare": "Compare",
+  "selectBaseVersion": "Select Base Version",
+  "selectCompareVersion": "Select Compare Version",
+  "noVersions": "No versions available for this form.",
+  "selectFormPrompt": "Select a form to view its versions",
+  "formName": "Form Name",
+  "latestVersion": "Latest Version",
+  "searchForms": "Search forms",
+  "versionPreview": "Form Version Preview"
+}

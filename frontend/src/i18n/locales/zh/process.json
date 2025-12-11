@@ -1,0 +1,179 @@
+{
+  "Create Start Event": "创建开始事件",
+  "Create End Event": "创建结束事件",
+  "Create Exclusive Gateway": "创建排他网关",
+  "Create Parallel Gateway": "创建并行网关",
+  "name": "流程名称",
+  "key": "流程标识",
+  "tabs": {
+    "management": "流程管理",
+    "designer": "流程设计器",
+    "forms": "表单管理",
+    "versions": "版本管理",
+    "assignments": "任务分配",
+    "assignmentsComingSoon": "分配功能即将推出",
+    "instances": "实例",
+    "holidaySetting": "节假日设置"
+  },
+  "instances": {
+    "columns": {
+      "id": "ID",
+      "definitionId": "定义ID",
+      "status": "状态",
+      "startTime": "开始时间",
+      "businessKey": "业务键",
+      "actions": "操作"
+    },
+    "dialog": {
+      "title": "流程活动",
+      "noActivities": "未找到活动"
+    }
+  },
+  "errors": {
+    "fetchInstancesFailed": "获取流程实例失败",
+    "fetchActivitiesFailed": "获取流程活动失败"
+  },
+  "activity": {
+    "startTime": "开始时间",
+    "endTime": "结束时间",
+    "duration": "持续时间",
+    "ongoing": "进行中"
+  },
+  "definition": {
+    "title": "Process Definition",
+    "name": "Name",
+    "key": "Key",
+    "version": "Version"
+  },
+  "instance": {
+    "title": "Instance Details",
+    "id": "ID",
+    "status": "Status",
+    "startTime": "Start Time"
+  },
+  "status": "状态",
+  "lastModified": "最后修改",
+  "versions": "版本",
+  "viewVersions": "查看版本",
+  "businessOwner": "业务负责人",
+  "bpmnXml": "BPMN XML",
+  "bpmnXmlPlaceholder": "在此粘贴BPMN XML内容",
+  "createdAt": "创建时间",
+  "createdBy": "创建人",
+  "activate": "激活",
+  "search": "搜索流程",
+  "create": "创建流程",
+  "edit": "编辑流程",
+  "delete": "删除流程",
+  "createDialog": {
+    "title": "创建新流程"
+  },
+  "editDialog": {
+    "title": "编辑流程"
+  },
+  "versionsDialog": {
+    "title": "{name}的版本"
+  },
+  "versionDetails": {
+    "title": "版本{version}详情"
+  },
+  "validation": {
+    "required": "此字段为必填项"
+  },
+  "createVersion": "创建版本",
+  "cloneVersion": "克隆版本",
+  "noVersions": "无可用版本",
+  "viewDetails": "查看详情",
+  "versionManagement": "版本管理 - {name}",
+  "statusFilters": {
+    "ACTIVE": "活跃",
+    "INACTIVE": "未活跃",
+    "DRAFT": "草稿",
+    "DEPLOYED": "已部署"
+  },
+  "filters": {
+    "status": "状态"
+  },
+  "form": {
+    "createTitle": "创建流程",
+    "name": "流程名称",
+    "key": "流程标识",
+    "description": "描述",
+    "owner": "流程负责人",
+    "businessOwner": "业务负责人",
+    "errors": {
+      "nameRequired": "流程名称必填",
+      "keyRequired": "流程标识必填",
+      "ownerRequired": "流程负责人必填"
+    }
+  },
+  "Create Custom Task": "创建自定义任务",
+  "Create Approval Task": "创建审批任务",
+  "Create Service Task": "创建服务任务",
+  "Create Business Rule Task": "创建业务规则任务",
+  "Create Mail Task": "创建邮件任务",
+  "Create Script Task": "创建脚本任务",
+  "Rule Name": "规则名称",
+  "To Address": "收件地址",
+  "Script Language": "脚本语言",
+  "confirmation": {
+    "title": "确认",
+    "createProcess": "确定要创建此流程吗？"
+  },
+  "status.no-version-defined": "未定义",
+  "version": {
+    "createTitle": "创建流程版本",
+    "name": "名称",
+    "key": "标识",
+    "description": "描述",
+    "owner": "负责人",
+    "businessOwner": "业务负责人",
+    "formSelected": "表单版本已选择",
+    "formNotSelected": "未选择表单版本",
+    "processDefined": "流程已定义",
+    "processNotDefined": "流程未定义",
+    "errors": {
+      "nameRequired": "名称必填",
+      "keyRequired": "标识必填",
+      "versionRequired": "版本必填",
+      "designerRequired": "流程设计必填",
+      "ownerRequired": "负责人必填",
+      "businessOwnerRequired": "业务负责人必填",
+      "invalidXml": "无效的BPMN XML",
+      "missingProcess": "至少需要一个流程",
+      "missingStartEvent": "至少需要一个开始事件"
+    }
+  },
+  "formSelector": {
+    "selectKey": "选择表单标识",
+    "selectVersion": "选择表单版本",
+    "errorLoadingKeys": "加载表单标识时出错",
+    "errorLoadingVersions": "加载 {key} 的版本时出错"
+  },
+  "selector": {
+    "selectVersion": "选择表单版本"
+  },
+  "noVersionTooltip": "没有可用的版本用于激活",
+  "versionDialog": {
+    "title": "选择要激活的版本",
+    "createdAt": "创建时间",
+    "activate": "激活此版本"
+  },
+  "processInstances": {
+    "dialog": {
+      "title": "流程实例详情",
+      "activitiesTitle": "活动",
+      "completedAt": "完成于",
+      "inProgress": "进行中",
+      "noActivities": "未找到活动",
+      "activeTasksTitle": "活动任务",
+      "closeButton": "关闭"
+    },
+    "notCompleted": "未完成"
+  },
+  "table": {
+    "createVersion": "创建版本",
+    "activate": "激活"
+  },
+  "open-designer": "打开设计器"
+}

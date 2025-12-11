@@ -1,0 +1,54 @@
+{
+  "validCompanies": [
+    {
+      "name": "测试集团公司",
+      "description": "用于自动化测试的集团公司",
+      "companyType": "Group",
+      "active": true
+    },
+    {
+      "name": "测试商业实体",
+      "description": "用于自动化测试的商业实体",
+      "companyType": "Business Entity",
+      "active": true,
+      "requiresParent": true
+    },
+    {
+      "name": "测试供应商",
+      "description": "用于自动化测试的供应商",
+      "companyType": "Vendor",
+      "active": true,
+      "requiresParent": true
+    }
+  ],
+  "invalidCompanies": [
+    {
+      "name": "",
+      "description": "空名称测试",
+      "companyType": "Group",
+      "active": true,
+      "expectedError": "名称不能为空"
+    },
+    {
+      "name": "测试Business Entity无关联",
+      "description": "测试Business Entity必须关联母公司",
+      "companyType": "Business Entity",
+      "active": true,
+      "expectedError": "必须关联Group或Business Entity公司"
+    }
+  ],
+  "searchTestData": [
+    {
+      "searchTerm": "IT",
+      "description": "搜索包含IT的公司"
+    },
+    {
+      "searchTerm": "测试",
+      "description": "搜索包含测试的公司"
+    },
+    {
+      "searchTerm": "&",
+      "description": "测试特殊字符搜索"
+    }
+  ]
+} 

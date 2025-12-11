@@ -1,0 +1,10 @@
+{
+  "dragDropTitle": "拖放以上传",
+  "dragDropText": "或点击选择文件",
+  "selectedFile": "已选择文件",
+  "result": "导入完成: {success} 成功, {error} 错误",
+  "status": {
+    "valid": "有效",
+    "error": "错误"
+  }
+}

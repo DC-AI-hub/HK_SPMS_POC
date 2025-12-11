@@ -1,0 +1,76 @@
+{
+  "settings": {
+    "title": "系統設置",
+    "loading": "正在加載系統配置...",
+    "unsavedChanges": "未保存的更改",
+    "allChangesSaved": "所有更改已保存"
+  },
+  "buttons": {
+    "reset": "重置",
+    "saveChanges": "保存更改",
+    "saving": "保存中..."
+  },
+  "validation": {
+    "mustBeNumber": "必須是一個有效的數字",
+    "invalidJson": "無效的JSON格式"
+  },
+  "status": {
+    "saveSuccess": "設置保存成功！",
+    "saveError": "保存設置失敗，請重試。",
+    "validationError": "請在保存前修復驗證錯誤。"
+  },
+  "errors": {
+    "loadingError": "加載系統配置錯誤"
+  },
+  "pageTitles": {
+    "systemConfiguration": "系統配置"
+  },
+  "descriptions": {
+    "systemConfig": "管理系統設置、導航菜單和主題配置"
+  },
+  "dataTypes": {
+    "BOOLEAN": "布爾值",
+    "NUMBER": "數字",
+    "JSON": "JSON",
+    "STRING": "字符串"
+  },
+  "booleanStates": {
+    "enabled": "啟用",
+    "disabled": "禁用"
+  },
+  "jsonHelper": "輸入有效的JSON格式",
+  "menu": {
+    "management": "菜單配置",
+    "addMenuItem": "添加菜單項",
+    "editMenuItem": "編輯菜單項",
+    "addNewMenuItem": "添加新菜單項",
+    "noMenuItems": "未配置菜單項。點擊\"添加菜單項\"開始配置。",
+    "loading": "正在加載菜單配置...",
+    "title": "標題",
+    "path": "路徑",
+    "icon": "圖標",
+    "displayOrder": "顯示順序",
+    "parentMenu": "父菜單",
+    "active": "激活",
+    "allowedRoleIds": "允許的角色ID",
+    "noParent": "無父菜單（頂級）",
+    "order": "順序",
+    "iconNone": "無",
+    "roles": "角色",
+    "inactive": "未激活",
+    "validation": {
+      "titleRequired": "標題是必填項",
+      "titleTooLong": "標題必須少於100個字符",
+      "pathRequired": "路徑是必填項",
+      "displayOrderNonNegative": "顯示順序必須為非負數"
+    },
+    "status": {
+      "createSuccess": "菜單項創建成功！",
+      "updateSuccess": "菜單項更新成功！",
+      "deleteSuccess": "菜單項刪除成功！",
+      "saveError": "保存菜單項失敗，請重試。",
+      "deleteError": "刪除菜單項失敗，請重試。"
+    },
+    "confirmDelete": "確定要刪除此菜單項嗎？"
+  }
+}

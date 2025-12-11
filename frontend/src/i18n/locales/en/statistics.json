@@ -1,0 +1,12 @@
+{
+  "user.active.count.name": "Active Users",
+  "user.active.count.description": "Number of active users in the system",
+  "department.count.name": "Departments",
+  "department.count.description": "Total number of departments",
+  "form.definition.count.name": "Form Definitions",
+  "form.definition.count.description": "Number of form templates created",
+  "process.instance.count.name": "Process Instances",
+  "process.instance.count.description": "Number of running process instances",
+  "user.count.name": "Total Users",
+  "user.count.description": "Total number of system users"
+}

@@ -1,0 +1,65 @@
+{
+    "title": "Access Management",
+    "tabs": {
+        "roles": "Roles",
+        "permissions": "Permissions",
+        "hierarchy": "Hierarchy",
+        "userMapping": "User Mapping"
+    },
+    "columns": {
+        "id": "ID",
+        "name": "Name",
+        "description": "Description",
+        "actions": "Actions"
+    },
+    "searchPlaceholder": "Search roles...",
+    "createRoleButton": "Create Role",
+    "editRoleTitle": "Edit Role",
+    "createRoleTitle": "Create Role",
+    "form": {
+        "name": "Name",
+        "description": "Description"
+    },
+    "errors": {
+        "fetchRoles": "Error fetching roles",
+        "deleteRole": "Error deleting role",
+        "updateRole": "Error updating role",
+        "createRole": "Error creating role",
+        "fetchPermissions": "Error fetching permissions",
+        "addPermission": "Error adding permission",
+        "removePermission": "Error removing permission",
+        "fetchParents": "Error fetching parent roles",
+        "addParent": "Error adding parent role",
+        "removeParent": "Error removing parent role"
+    },
+    "selectRoleForPermissions": "Select role for permissions",
+    "selectRole": "Select role",
+    "permissionsFor": "Permissions for",
+    "newPermission": "New Permission",
+    "addPermission": "Add Permission",
+    "currentPermissions": "Current Permissions",
+    "noPermissions": "No permissions assigned",
+    "selectRoleForHierarchy": "Select role for hierarchy",
+    "parentRolesFor": "Parent roles for",
+    "selectParentRole": "Select parent role",
+    "addParent": "Add Parent",
+    "currentParents": "Current Parents",
+    "noParents": "No parent roles assigned",
+  "loadingParents": "Loading parent roles...",
+  "loadingChildren": "Loading child roles...",
+  "noChildren": "No child roles assigned",
+    "selectUserForRoles": "Select user for roles",
+    "selectUser": "Select user",
+    "rolesForUser": "Roles for user",
+    "selectRoleToAssign": "Select role to assign",
+    "assignRole": "Assign Role",
+    "currentRoles": "Current Roles",
+    "noRolesAssigned": "No roles assigned",
+    "common": {
+        "edit": "Edit",
+        "delete": "Delete",
+        "cancel": "Cancel",
+        "save": "Save",
+        "create": "Create"
+    }
+}

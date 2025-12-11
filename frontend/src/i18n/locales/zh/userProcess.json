@@ -1,0 +1,95 @@
+{
+  "tabs": {
+    "processDefinitions": "流程定义",
+    "processInstances": "我的流程实例",
+    "userTasks": "我的任务",
+    "processHistory": "流程历史"
+  },
+  "switch": {
+    "handledByMe": "由我处理",
+    "startedByMe": "由我发起"
+  },
+  "processHistoryTable": {
+    "instanceId": "实例ID",
+    "startTime": "开始时间",
+    "endTime": "结束时间",
+    "businessKey": "业务键"
+  },
+  "processDefinitions": {
+    "title": "流程定义",
+    "description": "查看活动流程定义并启动新实例",
+    "owner": "所有者",
+    "version": "版本",
+    "startButton": "开始",
+    "startDialog": {
+      "title": "启动 {{process}}",
+      "description": "确定要启动此流程吗？",
+      "cancelButton": "取消",
+      "confirmButton": "确认"
+    }
+  },
+  "processInstances": {
+    "title": "我的流程实例",
+    "description": "监控您活动流程实例的进度",
+    "table": {
+      "instanceId": "实例ID",
+      "processName": "流程名称",
+      "startTime": "开始时间",
+      "currentStage": "当前阶段",
+      "status": "状态",
+      "businessKey": "流程业务号"
+    },
+    "dialog": {
+      "title": "实例 {{id}} 详情",
+      "stagesTitle": "阶段进度",
+      "assigneesTitle": "当前处理人",
+      "noAssignees": "此阶段无处理人",
+      "closeButton": "关闭"
+    },
+    "notCompleted": "未完成"
+  },
+  "userTasks": {
+    "title": "我的任务",
+    "description": "查看并完成分配给您的任务",
+    "unassigned": "未分配",
+    "dialog": {
+      "taskId": "任务ID",
+      "assignee": "负责人",
+      "title": "任务详情：{{title}}",
+      "processName": "流程名称",
+      "dueDate": "截止日期",
+      "priority": "优先级",
+      "taskDetails": "任务详情",
+      "cancelButton": "取消",
+      "completeButton": "完成"
+    },
+    "table": {
+      "taskTitle": "任务标题",
+      "processName": "流程名称",
+      "dueDate": "截止日期",
+      "priority": "优先级",
+      "actions": "操作",
+      "assignee": "负责人",
+      "businessKey": "流程业务号"
+    },
+    "overdue": "已逾期",
+    "errors": {
+      "fetchMetadataFailed": "无法获取流程实例元数据",
+      "fetchActivitiesFailed": "无法获取活动数据"
+    },
+    "processInstance": {
+      "title": "流程实例详情"
+    },
+    "overdueTooltip": "此任务已超过截止日期",
+    "detailsTooltip": "查看详情",
+    "completeTooltip": "完成任务",
+    "declineTooltip": "拒绝任务",
+    "declineDialog": {
+      "title": "拒绝任务：{{title}}",
+      "description": "请提供拒绝此任务的原因",
+      "reasonLabel": "拒绝原因",
+      "cancelButton": "取消",
+      "confirmButton": "确认拒绝"
+    }
+  }
+}

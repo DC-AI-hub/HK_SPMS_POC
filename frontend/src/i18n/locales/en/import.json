@@ -1,0 +1,10 @@
+{
+  "dragDropTitle": "Drag & Drop to Upload",
+  "dragDropText": "or click to select a file",
+  "selectedFile": "Selected file",
+  "result": "Import completed: {success} successful, {error} errors",
+  "status": {
+    "valid": "Valid",
+    "error": "Error"
+  }
+}

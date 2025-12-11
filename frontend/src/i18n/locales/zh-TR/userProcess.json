@@ -1,0 +1,90 @@
+{
+  "tabs": {
+    "processDefinitions": "流程定義",
+    "processInstances": "我的流程實例",
+    "userTasks": "我的任務",
+    "processHistory": "流程歷史"
+  },
+  "processHistoryTable": {
+    "instanceId": "實例ID",
+    "startTime": "開始時間",
+    "endTime": "結束時間",
+    "businessKey": "業務鍵"
+  },
+  "processDefinitions": {
+    "title": "流程定義",
+    "description": "查看活動流程定義並啟動新實例",
+    "owner": "擁有者",
+    "version": "版本",
+    "startButton": "開始",
+    "startDialog": {
+      "title": "啟動 {{process}}",
+      "description": "確定要啟動此流程嗎？",
+      "cancelButton": "取消",
+      "confirmButton": "確認"
+    }
+  },
+  "processInstances": {
+    "title": "我的流程實例",
+    "description": "監控您活動流程實例的進度",
+    "table": {
+      "instanceId": "實例ID",
+      "processName": "流程名稱",
+      "startTime": "開始時間",
+      "currentStage": "當前階段",
+      "status": "狀態",
+      "businessKey": "流程業務號"
+    },
+    "dialog": {
+      "title": "實例 {{id}} 詳情",
+      "stagesTitle": "階段進度",
+      "assigneesTitle": "當前處理人",
+      "noAssignees": "此階段無處理人",
+      "closeButton": "關閉"
+    },
+    "notCompleted": "未完成"
+  },
+  "userTasks": {
+    "title": "我的任務",
+    "description": "查看並完成分配給您的任務",
+    "table": {
+      "taskTitle": "任務標題",
+      "processName": "流程名稱",
+      "dueDate": "截止日期",
+      "priority": "優先級",
+      "actions": "操作"
+    },
+    "overdue": "已逾期",
+    "overdueTooltip": "此任務已超過截止日期",
+    "detailsTooltip": "查看詳情",
+    "completeTooltip": "完成任務",
+    "declineTooltip": "拒絕任務",
+    "dialog": {
+      "title": "任務詳情：{{title}}",
+      "processName": "流程名稱",
+      "dueDate": "截止日期",
+      "priority": "優先級",
+      "taskDetails": "任務詳情",
+      "cancelButton": "取消",
+      "completeButton": "完成",
+      "instanceId": "實例 ID",
+      "status": "狀態",
+      "startTime": "開始時間",
+      "noInstance": "無實例數據"
+    },
+    "declineDialog": {
+      "title": "拒絕任務：{{title}}",
+      "description": "請提供拒絕此任務的原因",
+      "reasonLabel": "拒絕原因",
+      "cancelButton": "取消",
+      "confirmButton": "確認拒絕"
+    },
+    "errors": {
+      "fetchMetadataFailed": "無法獲取流程實例元數據",
+      "fetchActivitiesFailed": "無法獲取活動數據"
+    },
+    "processInstance": {
+      "title": "流程實例詳情"
+    }
+  }
+}

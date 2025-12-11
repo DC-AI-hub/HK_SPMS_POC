@@ -1,0 +1,58 @@
+{
+  "title": "权限管理",
+  "tabs": {
+    "roles": "角色",
+    "permissions": "权限",
+    "hierarchy": "层级",
+    "userMapping": "用户映射"
+  },
+  "columns": {
+    "id": "ID",
+    "name": "名称",
+    "description": "描述",
+    "actions": "操作"
+  },
+  "searchPlaceholder": "搜索角色...",
+  "createRoleButton": "创建角色",
+  "editRoleTitle": "编辑角色",
+  "createRoleTitle": "创建角色",
+  "form": {
+    "name": "名称",
+    "description": "描述"
+  },
+  "errors": {
+    "fetchRoles": "获取角色失败",
+    "deleteRole": "删除角色失败",
+    "updateRole": "更新角色失败",
+    "createRole": "创建角色失败",
+    "fetchPermissions": "获取权限失败",
+    "addPermission": "添加权限失败",
+    "removePermission": "移除权限失败",
+    "fetchParents": "获取父角色失败",
+    "addParent": "添加父角色失败",
+    "removeParent": "移除父角色失败"
+  },
+  "selectRoleForPermissions": "选择角色分配权限",
+  "selectRole": "选择角色",
+  "permissionsFor": "权限分配: ",
+  "newPermission": "新权限",
+  "addPermission": "添加权限",
+  "currentPermissions": "当前权限",
+  "noPermissions": "无权限分配",
+  "selectRoleForHierarchy": "选择角色管理层级",
+  "parentRolesFor": "父角色: ",
+  "selectParentRole": "选择父角色",
+  "addParent": "添加父角色",
+  "currentParents": "当前父角色",
+  "noParents": "无父角色",
+  "loadingParents": "正在加载父角色...",
+  "loadingChildren": "正在加载子角色...",
+  "noChildren": "没有子角色",
+  "selectUserForRoles": "选择用户分配角色",
+  "selectUser": "选择用户",
+  "rolesForUser": "用户角色: ",
+  "selectRoleToAssign": "选择分配角色",
+  "assignRole": "分配角色",
+  "currentRoles": "当前角色",
+  "noRolesAssigned": "无角色分配"
+}

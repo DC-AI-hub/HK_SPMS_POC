@@ -1,0 +1,119 @@
+{
+  "Create Start Event": "Create Start Event",
+  "Create End Event": "Create End Event",
+  "Create Exclusive Gateway": "Create Exclusive Gateway",
+  "Create Parallel Gateway": "Create Parallel Gateway",
+  "name": "流程名稱",
+  "key": "流程標識",
+  "tabs": {
+    "management": "流程管理",
+    "designer": "流程設計器",
+    "forms": "表單管理",
+    "versions": "版本管理",
+    "assignments": "任務分配",
+    "assignmentsComingSoon": "分配功能即將推出"
+  },
+  "status": "狀態",
+  "lastModified": "最後修改",
+  "versions": "版本",
+  "viewVersions": "查看版本",
+  "businessOwner": "業務負責人",
+  "bpmnXml": "BPMN XML",
+  "bpmnXmlPlaceholder": "在此貼上BPMN XML內容",
+  "createdAt": "創建時間",
+  "createdBy": "創建人",
+  "activate": "激活",
+  "search": "搜尋流程",
+  "create": "創建流程",
+  "edit": "編輯流程",
+  "delete": "刪除流程",
+  "createDialog": {
+    "title": "創建新流程"
+  },
+  "editDialog": {
+    "title": "編輯流程"
+  },
+  "versionsDialog": {
+    "title": "{name}的版本"
+  },
+  "versionDetails": {
+    "title": "版本{version}詳情"
+  },
+  "validation": {
+    "required": "此欄位為必填項"
+  },
+  "statusFilters": {
+    "ACTIVE": "啟用",
+    "INACTIVE": "停用",
+    "DRAFT": "草稿",
+    "DEPLOYED": "已部署"
+  },
+  "filters": {
+    "status": "狀態"
+  },
+  "form": {
+    "createTitle": "創建流程",
+    "name": "流程名稱",
+    "key": "流程標識",
+    "description": "描述",
+    "owner": "流程負責人",
+    "businessOwner": "業務負責人",
+    "errors": {
+      "nameRequired": "流程名稱必填",
+      "keyRequired": "流程標識必填",
+      "ownerRequired": "流程負責人必填"
+    }
+  },
+  "Create Custom Task": "創建自定義任務",
+  "Create Approval Task": "創建審批任務",
+  "Create Service Task": "創建服務任務",
+  "Create Business Rule Task": "Create Business Rule Task",
+  "Create Mail Task": "Create Mail Task",
+  "Create Script Task": "Create Script Task",
+  "Rule Name": "Kural Adı",
+  "To Address": "Alıcı Adresi",
+  "Script Language": "Komut Dili",
+  "confirmation": {
+    "title": "確認",
+    "createProcess": "確定要創建此流程嗎？",
+    "updateVersion": "確定要更新版本嗎？"
+  },
+  "version": {
+    "createTitle": "創建流程版本",
+    "name": "名稱",
+    "key": "標識",
+    "description": "描述",
+    "owner": "負責人",
+    "businessOwner": "業務負責人",
+    "formSelected": "表單版本已選擇",
+    "formNotSelected": "未選擇表單版本",
+    "processDefined": "流程已定義",
+    "processNotDefined": "流程未定義",
+    "readOnlyTooltip": "此欄位僅供檢視",
+    "errors": {
+      "nameRequired": "名稱必填",
+      "keyRequired": "標識必填",
+      "versionRequired": "版本必填",
+      "designerRequired": "流程設計必填",
+      "ownerRequired": "負責人必填",
+      "businessOwnerRequired": "業務負責人必填",
+      "invalidXml": "無效的BPMN XML",
+      "missingProcess": "至少需要一個流程",
+      "missingStartEvent": "至少需要一個開始事件"
+    }
+  },
+  "open-designer": "開啟設計工具",
+  "formSelector": {
+    "selectKey": "選擇表單標識",
+    "selectVersion": "選擇表單版本",
+    "errorLoadingKeys": "加載表單標識時出錯",
+    "errorLoadingVersions": "加載 {key} 的版本時出錯"
+  },
+  "selector": {
+    "selectVersion": "選擇表單版本"
+  },
+  "table": {
+    "createVersion": "創建版本",
+    "activate": "激活"
+  }
+}

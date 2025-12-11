@@ -1,0 +1,73 @@
+{
+  "keySelector": {
+    "placeholder": "选择表单键",
+    "error": "加载表单键失败"
+  },
+  "title": "表单构建器",
+  "submit": "提交",
+  "keyInput": {
+    "label": "表单键",
+    "placeholder": "输入唯一的表单键",
+    "existsWarning": "此表单键已存在",
+    "loading": "正在检查可用性...",
+    "error": "检查表单键时出错"
+  },
+  "formView": "表单",
+  "dataView": "数据",
+  "schemaView": "结构",
+  "submittedData": "提交的数据",
+  "schemaEditor": "表单结构编辑器",
+  "format": "格式化",
+  "fields": {
+    "textfield": "文本字段",
+    "number": "数字",
+    "checkbox": "复选框",
+    "textarea": "文本区域"
+  },
+  "metadata": {
+    "title": "表单元数据",
+    "copy": "复制到剪贴板",
+    "edit": "编辑元数据",
+    "formattedView": "格式化视图",
+    "rawView": "原始JSON视图"
+  },
+  "create": {
+    "title": "创建新表单"
+  },
+  "preview": {
+    "empty": "未提供表单模式以供预览"
+  },
+  "deprecate": "废弃版本",
+  "keyHelper": "表单的唯一标识符（仅字母、数字和下划线）",
+  "keyInvalid": "键只能包含字母、数字和下划线",
+  "active": "激活",
+  "createVersion": "创建版本",
+  "createVersionTitle": "创建新版本",
+  "deprecated": "已废弃",
+  "errors": {
+    "formNotFound": "表单未找到",
+    "validationError": "验证错误: {{detail}}",
+    "invalidVersionFormat": "版本ID格式无效（只允许字母、数字、连字符和点）",
+    "failedToLoadBase": "加载基础版本失败",
+    "baseVersionNotFound": "未找到基础版本",
+    "genericError": "创建版本时发生错误，请重试"
+  },
+  "formKey": "表单标识",
+  "loadVersions": "加载版本",
+  "versionCreated": "版本创建成功",
+  "versionDeprecated": "版本已成功废弃",
+  "timeline": "时间线",
+  "compare": "比较",
+  "selectBaseVersion": "选择基础版本",
+  "selectCompareVersion": "选择比较版本",
+  "noVersions": "此表单无可用版本。",
+  "selectFormPrompt": "选择一个表单以查看其版本",
+  "formName": "表单名称",
+  "latestVersion": "最新版本",
+  "searchForms": "搜索表单",
+  "baseVersion": "基础版本",
+  "noBaseVersion": "无基础版本",
+  "versionPreview": "表单版本预览",
+  "originalVersion": "原始版本",
+  "modifiedVersion": "修改版本"
+}

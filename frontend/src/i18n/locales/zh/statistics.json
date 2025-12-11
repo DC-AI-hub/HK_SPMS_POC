@@ -1,0 +1,12 @@
+{
+  "user.active.count.name": "活跃用户",
+  "user.active.count.description": "系统中的活跃用户数量",
+  "department.count.name": "部门",
+  "department.count.description": "部门总数",
+  "form.definition.count.name": "表单定义",
+  "form.definition.count.description": "已创建的表单模板数量",
+  "process.instance.count.name": "流程实例",
+  "process.instance.count.description": "正在运行的流程实例数量",
+  "user.count.name": "用户总数",
+  "user.count.description": "系统中的用户总数"
+}
