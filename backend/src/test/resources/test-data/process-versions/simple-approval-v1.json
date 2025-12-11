@@ -1,0 +1,13 @@
+{
+  "name": "Simple Approval Process",
+  "key": "simple-approval",
+  "version": "1.0",
+  "bpmnFile": "processes/simple-approval.bpmn20.xml",
+  "status": "DRAFT",
+  "ownerId": 1,
+  "businessOwnerId": 1,
+  "createdById": 1,
+  "updatedById": 1,
+  "definitionId": "simple-approval",
+  "flowableDefinitionId": "simple-approval"
+}

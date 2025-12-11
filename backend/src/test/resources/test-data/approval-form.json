@@ -1,0 +1,17 @@
+{
+  "key": "approvalForm",
+  "fields": [
+    { 
+      "name": "approved", 
+      "type": "checkbox", 
+      "label": "Approve",
+      "required": true
+    },
+    { 
+      "name": "comments", 
+      "type": "textarea", 
+      "label": "Comments",
+      "required": false
+    }
+  ]
+}

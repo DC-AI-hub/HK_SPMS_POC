@@ -1,0 +1,32 @@
+{
+  "key": "leaveRequestForm",
+  "fields": [
+    { 
+      "name": "employeeName", 
+      "type": "text", 
+      "label": "Employee Name",
+      "required": true
+    },
+    { 
+      "name": "leaveType", 
+      "type": "select", 
+      "options": ["Annual", "Sick", "Unpaid"],
+      "required": true
+    },
+    { 
+      "name": "startDate", 
+      "type": "date",
+      "required": true
+    },
+    { 
+      "name": "endDate", 
+      "type": "date",
+      "required": true
+    },
+    { 
+      "name": "reason", 
+      "type": "textarea",
+      "required": false
+    }
+  ]
+}

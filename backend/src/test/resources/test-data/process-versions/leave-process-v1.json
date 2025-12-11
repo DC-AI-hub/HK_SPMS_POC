@@ -1,0 +1,13 @@
+{
+  "name": "Leave Process",
+  "key": "hr-leave-process",
+  "version": "1.0",
+  "bpmnFile": "processes/leave-process.bpmn20.xml",
+  "status": "DRAFT",
+  "ownerId": 1,
+  "businessOwnerId": 1,
+  "createdById": 1,
+  "updatedById": 1,
+  "definitionId": "hr-leave-process",
+  "flowableDefinitionId": "hr-leave-process"
+}

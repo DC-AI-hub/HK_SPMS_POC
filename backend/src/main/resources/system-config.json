@@ -1,0 +1,35 @@
+{
+  "menu": [
+    {
+      "title": "Dashboard",
+      "path": "/",
+      "icon": "home",
+      "roles": ["USER", "ADMIN"]
+    },
+    {
+      "title": "Organizations",
+      "path": "/org",
+      "icon": "folder",
+      "roles": ["USER", "ADMIN"]
+    },
+    {
+      "title": "System Admin",
+      "path": "/admin",
+      "icon": "settings",
+      "roles": [
+        "ADMIN"
+      ]
+    }
+  ],
+  "frontend": {
+    "apiBaseUrl": "/api/v1",
+    "features": {
+      "darkMode": true,
+      "notifications": true
+    },
+    "theme": {
+      "primaryColor": "#007bff",
+      "secondaryColor": "#6c757d"
+    }
+  }
+}

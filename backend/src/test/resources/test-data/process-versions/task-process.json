@@ -1,0 +1,13 @@
+{
+  "name": "Task Assignment Process",
+  "key": "task-process",
+  "version": "1.0",
+  "bpmnFile": "processes/task-assignment.bpmn20.xml",
+  "status": "ACTIVE",
+  "ownerId": 1,
+  "businessOwnerId": 1,
+  "createdById": 1,
+  "updatedById": 1,
+  "flowableDefinitionId": "task-process",
+  "definitionId": "task-process"
+}

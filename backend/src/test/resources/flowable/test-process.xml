@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+                  xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+                  xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+                  xmlns:flowable="http://flowable.org/bpmn"
+                  xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1"
+                  targetNamespace="http://bpmn.io/schema/bpmn">
+    <bpmn:process id="PROC_STES" name="" isExecutable="true">
+        <bpmn:startEvent id="StartEvent_1">
+            <bpmn:outgoing>Flow_0jexo0t</bpmn:outgoing>
+        </bpmn:startEvent>
+        <bpmn:userTask id="SUBMIT_APP_FORM" name="Submit Application Form" flowable:assignee="${initiator}" flowable:candidateUsers="">
+            <bpmn:incoming>Flow_0jexo0t</bpmn:incoming>
+            <bpmn:incoming>REJECT</bpmn:incoming>
+            <bpmn:outgoing>Flow_0bnwjgx</bpmn:outgoing>
+        </bpmn:userTask>
+        <bpmn:userTask id="FUNCTION_LINE_APPROVE" name="Function Line Approve" flowable:assignee="${organizationService.findUserDepartmentHead(${initiator},&#34;LOCAL&#34;)}">
+            <bpmn:incoming>Flow_18142yr</bpmn:incoming>
+            <bpmn:outgoing>Flow_1egvj0n</bpmn:outgoing>
+        </bpmn:userTask>
+        <bpmn:sequenceFlow id="Flow_0jexo0t" sourceRef="StartEvent_1" targetRef="SUBMIT_APP_FORM" />
+        <bpmn:sequenceFlow id="Flow_0bnwjgx" sourceRef="SUBMIT_APP_FORM" targetRef="Gateway_0ybmw8f" />
+        <bpmn:endEvent id="Event_0ixv3ra">
+            <bpmn:incoming>Flow_09ybgis</bpmn:incoming>
+            <bpmn:incoming>Flow_1dv2e2a</bpmn:incoming>
+        </bpmn:endEvent>
+        <bpmn:sequenceFlow id="Flow_1egvj0n" sourceRef="FUNCTION_LINE_APPROVE" targetRef="Gateway_03gtodd" />
+        <bpmn:exclusiveGateway id="Gateway_03gtodd" name="">
+            <bpmn:incoming>Flow_1egvj0n</bpmn:incoming>
+            <bpmn:outgoing>Flow_09ybgis</bpmn:outgoing>
+            <bpmn:outgoing>REJECT</bpmn:outgoing>
+        </bpmn:exclusiveGateway>
+        <bpmn:sequenceFlow id="Flow_09ybgis" sourceRef="Gateway_03gtodd" targetRef="Event_0ixv3ra">
+            <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${var:get(approve)=='approve'}</bpmn:conditionExpression>
+        </bpmn:sequenceFlow>
+        <bpmn:exclusiveGateway id="Gateway_0ybmw8f">
+            <bpmn:incoming>Flow_0bnwjgx</bpmn:incoming>
+            <bpmn:outgoing>Flow_18142yr</bpmn:outgoing>
+            <bpmn:outgoing>Flow_1dv2e2a</bpmn:outgoing>
+        </bpmn:exclusiveGateway>
+        <bpmn:sequenceFlow id="Flow_18142yr" sourceRef="Gateway_0ybmw8f" targetRef="FUNCTION_LINE_APPROVE">
+            <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${var:get(confirm)=='yes'}</bpmn:conditionExpression>
+        </bpmn:sequenceFlow>
+        <bpmn:sequenceFlow id="Flow_1dv2e2a" sourceRef="Gateway_0ybmw8f" targetRef="Event_0ixv3ra">
+            <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${var:get(confirm)=='no'}</bpmn:conditionExpression>
+        </bpmn:sequenceFlow>
+        <bpmn:sequenceFlow id="REJECT" name="" sourceRef="Gateway_03gtodd" targetRef="SUBMIT_APP_FORM">
+            <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${var:get(approve)=='reject'}</bpmn:conditionExpression>
+        </bpmn:sequenceFlow>
+    </bpmn:process>
+    <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+        <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="PROC_STES">
+            <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+                <dc:Bounds x="42" y="102" width="36" height="36" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="Activity_1tn6wr1_di" bpmnElement="SUBMIT_APP_FORM">
+                <dc:Bounds x="160" y="80" width="100" height="80" />
+                <bpmndi:BPMNLabel />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="Activity_1p2y0du_di" bpmnElement="FUNCTION_LINE_APPROVE">
+                <dc:Bounds x="470" y="80" width="100" height="80" />
+                <bpmndi:BPMNLabel />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="Event_0ixv3ra_di" bpmnElement="Event_0ixv3ra">
+                <dc:Bounds x="802" y="102" width="36" height="36" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="Gateway_03gtodd_di" bpmnElement="Gateway_03gtodd" isMarkerVisible="true">
+                <dc:Bounds x="645" y="95" width="50" height="50" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="Gateway_0ybmw8f_di" bpmnElement="Gateway_0ybmw8f" isMarkerVisible="true">
+                <dc:Bounds x="335" y="95" width="50" height="50" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNEdge id="Flow_0jexo0t_di" bpmnElement="Flow_0jexo0t">
+                <di:waypoint x="78" y="120" />
+                <di:waypoint x="160" y="120" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="Flow_0bnwjgx_di" bpmnElement="Flow_0bnwjgx">
+                <di:waypoint x="260" y="120" />
+                <di:waypoint x="335" y="120" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="Flow_1egvj0n_di" bpmnElement="Flow_1egvj0n">
+                <di:waypoint x="570" y="120" />
+                <di:waypoint x="645" y="120" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="Flow_09ybgis_di" bpmnElement="Flow_09ybgis">
+                <di:waypoint x="695" y="120" />
+                <di:waypoint x="802" y="120" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="Flow_18142yr_di" bpmnElement="Flow_18142yr">
+                <di:waypoint x="385" y="120" />
+                <di:waypoint x="470" y="120" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="Flow_1dv2e2a_di" bpmnElement="Flow_1dv2e2a">
+                <di:waypoint x="360" y="95" />
+                <di:waypoint x="360" y="-50" />
+                <di:waypoint x="820" y="-50" />
+                <di:waypoint x="820" y="102" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="Flow_1gb80za_di" bpmnElement="REJECT">
+                <di:waypoint x="670" y="145" />
+                <di:waypoint x="670" y="260" />
+                <di:waypoint x="210" y="260" />
+                <di:waypoint x="210" y="160" />
+            </bpmndi:BPMNEdge>
+        </bpmndi:BPMNPlane>
+    </bpmndi:BPMNDiagram>
+</bpmn:definitions>
